@@ -1,0 +1,88 @@
+{sn_alpha}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<style>
+  .dform_container textarea
+  {
+    width: 100%;
+  }
+  .dform_container input
+  {
+    width: 75%;
+  }
+   .dform_container input[type="submit"]
+  {
+    width: auto;
+    background: #b10f1f;
+    color: #fff;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 1.528571429;
+    cursor:pointer;
+    border: 1px solid transparent;
+  }
+   .dform_container input[type="radio"]
+   {
+    width:auto;
+   }
+  #content input[type="radio"]
+   {
+    margin-bottom: 0px;
+    height:13px;
+   }
+   .radios:nth-child(1)
+   {
+    margin-bottom: 10px !important;
+   }
+</style>
+{sn_vbs} 
+
+<!-- Start Nav Backed Header -->
+ {exp:channel:entries channel="pages" limit="1"}
+    {exp:channel_images:images entry_id="{entry_id}" limit="1"}
+      <div class="nav-backed-header parallax" style="background-image:url({image:url:1280x635}); height:272px;">
+    {/exp:channel_images:images}
+  {/exp:channel:entries}   <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+         <ol class="breadcrumb">
+            <p></p>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Nav Backed Header --> 
+  <!-- Start Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          {exp:channel:entries channel="pages"}
+          <h1>{page_title}</h1>
+          {/exp:channel:entries}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Page Header --> 
+  <!-- Start Content -->
+  <div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            {exp:channel:entries channel="pages"}
+              {page_content}
+            {/exp:channel:entries}
+            <hr>
+          </div>
+         <!--  <div class="col-lg-12 col-md-12 col-sm-12">
+            {exp:forms:form form_name="vbs_registration"}
+          </div> -->
+        
+          </div>
+        </div>
+      </div>
+    </div>
+{sn_omega_registration}
